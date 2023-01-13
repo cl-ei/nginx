@@ -26,8 +26,8 @@ RUN ./auto/configure --prefix=/usr/local/nginx \
 --with-pcre --with-stream \
 --with-stream_ssl_module \
 --with-stream_realip_module && \
-make && make install &&  ln -s /usr/local/nginx/sbin/nginx /usr/bin/
-
+make && make install && \
+ln -s /usr/local/nginx/sbin/nginx /usr/bin/ && make clean
 
 WORKDIR /
 CMD ["bash", "/nginx_source/entrypoint/run.sh"]
